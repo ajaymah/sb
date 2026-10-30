@@ -1,0 +1,71 @@
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+  Common Components
+</h1>
+
+<section class="mt-6" aria-labelledby="button-examples-title">
+  <h2 id="button-examples-title" class="text-xl font-semibold text-slate-900">
+    Buttons
+  </h2>
+  <div class="mt-4 flex flex-wrap items-center gap-3">
+    <app-button variant="primary">Primary</app-button>
+    <app-button variant="secondary">Secondary</app-button>
+    <app-button variant="disabled">Disabled</app-button>
+  </div>
+</section>
+
+
+
+<section class="mt-8" aria-labelledby="accordion-examples-title">
+  <h2 id="accordion-examples-title" class="mb-4 text-xl font-semibold text-slate-900">
+    Accordion
+  </h2>
+  <app-accordion [items]="accordionItems" />
+</section>
+
+<section class="mt-8" aria-labelledby="tabs-example-title">
+  <h2 id="tabs-example-title" class="mb-4 text-xl font-semibold text-slate-900">
+    Tabs
+  </h2>
+  <app-tabs id="home-tabs" [items]="tabs" />
+</section>
+
+<section class="mt-8" aria-labelledby="tooltip-example-title">
+  <h2 id="tooltip-example-title" class="mb-4 text-xl font-semibold text-slate-900">
+    Tooltip
+  </h2>
+  <app-tooltip
+    tooltipId="home-tooltip"
+    text="This tooltip appears on hover or keyboard focus."
+  >
+    Hover or focus me
+  </app-tooltip>
+</section>
+
+<section class="mt-8" aria-labelledby="toast-example-title">
+  <h2 id="toast-example-title" class="mb-4 text-xl font-semibold text-slate-900">
+    Toast message
+  </h2>
+  <div class="flex flex-wrap gap-3">
+    <app-button variant="secondary" (click)="showToast('success')">
+      Show success
+    </app-button>
+    <app-button variant="secondary" (click)="showToast('warning')">
+      Show warning
+    </app-button>
+    <app-button variant="secondary" (click)="showToast('error')">
+      Show error
+    </app-button>
+  </div>
+  <div class="mt-4 max-w-lg">
+    <app-toast
+      [message]="activeToast() === 'success'
+        ? 'Your changes have been saved successfully.'
+        : activeToast() === 'warning'
+          ? 'Please review your changes before continuing.'
+          : 'Something went wrong. Please try again.'"
+      [variant]="activeToast() ?? 'success'"
+      [visible]="activeToast() !== null"
+      (visibleChange)="!$event && dismissToast()"
+    />
+  </div>
+</section>
