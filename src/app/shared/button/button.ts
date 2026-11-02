@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 
 type ButtonVariant = 'primary' | 'secondary' | 'disabled';
+type ButtonSize = 'sm' | 'md' | 'lg';
 
 @Component({
   selector: 'app-button',
@@ -22,12 +23,17 @@ type ButtonVariant = 'primary' | 'secondary' | 'disabled';
 })
 export class Button {
   readonly variant = input<ButtonVariant>('primary');
+  readonly size = input<ButtonSize>('md');
 
   readonly isDisabled = computed(() => this.variant() === 'disabled');
 
   readonly classes = computed(() => {
-    const base =
-      'inline-flex min-h-11 items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2';
+    const sizeClasses: Record<ButtonSize, string> = {
+      sm: 'min-h-9 px-3 py-1.5 text-xs',
+      md: 'min-h-11 px-4 py-2 text-sm',
+      lg: 'min-h-12 px-5 py-2.5 text-base',
+    };
+    const base = `inline-flex items-center justify-center rounded-lg ${sizeClasses[this.size()]} font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2`;
 
     if (this.isDisabled()) {
       return `${base} cursor-not-allowed bg-slate-200 text-slate-500`;
@@ -37,6 +43,6 @@ export class Button {
       return `${base} cursor-pointer border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-slate-600`;
     }
 
-    return `${base} cursor-pointer bg-indigo-600 text-white hover:bg-indigo-700 focus-visible:outline-indigo-600`;
+    return `${base} cursor-pointer bg-[var(--color-brand)] text-white hover:brightness-90 focus-visible:outline-[var(--color-brand)]`;
   });
 }

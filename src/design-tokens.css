@@ -1,0 +1,21 @@
+:root {
+  color-scheme: light;
+
+  --color-brand: #004370;
+  --color-brand-strong: #004370;
+  --color-brand-subtle: #eef2ff;
+  --color-surface: #fff;
+  --color-surface-hover: #f1f5f9;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #475569;
+  --color-border: #e2e8f0;
+
+  --space-sidebar: 1rem;
+  --space-sidebar-compact: 0.75rem;
+  --space-sidebar-item: 0.625rem 0.75rem;
+  --radius-control: 0.625rem;
+  --radius-panel: 1rem;
+  --shadow-panel: 0 1px 2px rgb(15 23 42 / 5%);
+  --motion-fast: 150ms ease;
+}
