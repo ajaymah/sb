@@ -1,13 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { Accordion, AccordionItem } from '../../shared/accordion/accordion';
 import { Button } from '../../shared/button/button';
+import { Card } from '../../shared/card/card';
 import { TabItem, Tabs } from '../../shared/tabs/tabs';
 import { Toast, ToastVariant } from '../../shared/toast/toast';
 import { Tooltip } from '../../shared/tooltip/tooltip';
 
 @Component({
   selector: 'app-home',
-  imports: [Accordion, Button, Tabs, Toast, Tooltip],
+  imports: [Accordion, Button, Card, Tabs, Toast, Tooltip],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

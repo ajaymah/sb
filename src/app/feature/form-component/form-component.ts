@@ -23,8 +23,8 @@ export class FormComponent {
   ];
 
   protected readonly contactMethods = [
-    { label: 'Email', value: 'email' },
-    { label: 'Phone', value: 'phone' },
+    { label: 'Male', value: 'male' },
+    { label: 'Female', value: 'female' },
   ];
 
   protected setName(value: InputValue): void {

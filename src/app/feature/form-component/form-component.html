@@ -44,14 +44,14 @@
     <app-input
       id="subscribe"
       type="checkbox"
-      label="Subscribe to updates"
+      label="Checkbox"
       [value]="subscribed()"
       (valueChange)="setSubscribed($event)"
     />
     <app-input
       id="contact-method"
       type="radio"
-      label="Preferred contact method"
+      label="Contact Method"
       name="contact-method"
       [options]="contactMethods"
       [value]="contactMethod()"
