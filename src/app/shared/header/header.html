@@ -1,0 +1,58 @@
+<header class="border-b border-slate-200 bg-white">
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+    <a
+      routerLink="/home"
+      class="flex w-fit items-center gap-3 rounded-lg text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600"
+      aria-label="WBG home"
+    >
+      <span class="grid size-10 place-items-center rounded-xl bg-indigo-600 text-sm font-bold tracking-wide text-white">W</span>
+      <span class="text-xl font-bold tracking-tight">WBG</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul class="flex flex-wrap items-center gap-1">
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="bg-indigo-50 text-indigo-700"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            class="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/form-elements"
+            routerLinkActive="bg-indigo-50 text-indigo-700"
+            ariaCurrentWhenActive="page"
+            class="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Form elements
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/tables"
+            routerLinkActive="bg-indigo-50 text-indigo-700"
+            ariaCurrentWhenActive="page"
+            class="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Tables
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/grid"
+            routerLinkActive="bg-indigo-50 text-indigo-700"
+            ariaCurrentWhenActive="page"
+            class="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Grid
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

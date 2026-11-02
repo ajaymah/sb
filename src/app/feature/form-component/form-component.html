@@ -1,0 +1,61 @@
+
+  <h1 class="text-3xl font-bold text-slate-900">Form elements</h1>
+  <p class="mt-2 text-slate-600">
+    Examples of the shared input component and its supported control types.
+  </p>
+
+  <form
+    class="mt-8 grid gap-6 rounded-xl border border-slate-200 bg-white p-6 sm:grid-cols-2"
+    (submit)="$event.preventDefault()"
+  >
+    <app-input
+      id="name"
+      type="text"
+      label="Name"
+      placeholder="Enter your name"
+      [value]="name()"
+      (valueChange)="setName($event)"
+    />
+    <app-input
+      id="quantity"
+      type="number"
+      label="Quantity"
+      placeholder="Enter a quantity"
+      [value]="quantity()"
+      (valueChange)="setQuantity($event)"
+    />
+    <app-input
+      id="category"
+      type="select"
+      label="Category"
+      placeholder="Choose a category"
+      [options]="categories"
+      [value]="category()"
+      (valueChange)="setCategory($event)"
+    />
+    <app-input
+      id="description"
+      type="textarea"
+      label="Description"
+      placeholder="Add a description"
+      [value]="description()"
+      (valueChange)="setDescription($event)"
+    />
+    <app-input
+      id="subscribe"
+      type="checkbox"
+      label="Subscribe to updates"
+      [value]="subscribed()"
+      (valueChange)="setSubscribed($event)"
+    />
+    <app-input
+      id="contact-method"
+      type="radio"
+      label="Preferred contact method"
+      name="contact-method"
+      [options]="contactMethods"
+      [value]="contactMethod()"
+      (valueChange)="setContactMethod($event)"
+    />
+  </form>
+
